@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+</head>
+<style>
+        .container{
+        height: 100vh;
+        width: 100%;
+        background-image: url(11.png);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form{
+        height: 400px;
+        width: 300px;
+        background-color: rgb(255, 255, 255);
+        opacity: 0.5;
+        border-radius: 10%;
+        padding: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        text-align: center;
+        justify-content: center;
+    }
+    input{
+        margin-bottom: 20px;
+        height: 30px;
+        width: 95%;
+        border: 1 solid black;
+    }
+    button{
+        height: 50px;
+        width: 70%;
+        border: 1 solid black;
+        background-color: rgb(255, 255, 255);
+        align-items: center;
+    }
+    label{
+        font-style: bold;
+
+    }
+</style>
+<body>
+    <div class="container">
+    <div class="form">
+        <h1>Registration Form</h1>
+        <form action="/submit_form" method="POST">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+        </form>
+        <center><button onclick="savedata()">submit</button></center>
+    </div>
+    
+</body>
+<script>
+    function savedata() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var email = document.getElementById('email').value;
+        if(username ==""){
+            alert("Username field is required");
+            
+        }
+        else if(password ==""){
+            alert("Password field is required");
+        }
+        else if(email ==""){
+            alert("Email field is required");
+        }else if(username =="" && password ==""){
+            alert("Username and Password field is required");
+        }
+        else if(email =="" && password ==""){
+            alert("Email and Password field is required");
+        }
+        else if(username =="" && email ==""){
+            alert("Username and Email field is required");
+        }
+        else{
+            alert("Data saved successfully");
+        }
+    
+    }
+</script>
+</html>
